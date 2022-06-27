@@ -1,0 +1,9 @@
+.dropdown {
+    .dropdown-menu {
+        padding: 0;
+        min-width: 110px;
+    }
+    &__icon {
+        cursor: pointer;
+    }
+}

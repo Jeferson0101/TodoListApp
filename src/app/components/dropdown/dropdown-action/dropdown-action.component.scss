@@ -1,0 +1,14 @@
+.dropdown {
+    &__item {
+        border-bottom: solid 1px #ededed;
+        cursor: pointer;
+        padding-left: 5px;
+
+        &__text {}
+
+        &__icon {
+            position: absolute;
+            right: 5px;
+        }
+    }
+}

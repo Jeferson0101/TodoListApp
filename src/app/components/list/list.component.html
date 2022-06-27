@@ -1,0 +1,51 @@
+<div class="group-list">
+  <div class="list" *ngFor="let list of lists">
+
+    <span class="list__title">{{list.title}}</span>
+
+    <div class="list__items" *ngIf="list.items">
+      <span class="list__items__item" *ngFor="let item of list.items">
+        {{item.title}}</span>
+    </div>
+    
+    <span class="list__new-item">Adicionar tarefa</span>
+
+    <div class="list__dropdown-actions" *ngIf="list.id">
+      <dropdown>
+        <dropdown-action [displayText]="'Remover'"
+          [icon]="trashIcon" (onActionClick)="removeList(list.id)"></dropdown-action>
+
+        <dropdown-action [displayText]="'Concluir'"
+          [icon]="checkIcon" (onActionClick)="completeList(list.id)"></dropdown-action>
+      </dropdown>
+    </div>
+
+  </div>
+
+  <div class="list list--new-list">
+    <button *ngIf="!showInput" class="btn btn-outline-secondary list__collapse-button" type="button" data-toggle="collapse" data-target="#collapseExample"
+      aria-expanded="false" aria-controls="collapseExample"
+      (click)="showCreateInput()">
+      <fa-icon [icon]="addIcon"></fa-icon>
+      Criar nova lista
+    </button>
+
+    <div *ngIf="showInput" class="collapse list__collapse" id="collapseExample">
+      <div class="card card-body list__collapse__card">
+
+        <input type="email" [formControl]="newListInput"
+          class="form-control list__collapse__card__input"
+          id="exampleInputEmail1" aria-describedby="emailHelp">
+        
+        </div>
+      </div>
+      
+      <span class="list__close-icon" *ngIf="showInput" (click)="hideCreateInput()">
+        <fa-icon [icon]="closeIcon" size="lg"></fa-icon>
+      </span>
+      
+    <button *ngIf="showInput" type="button" class="btn btn-primary list__create-button"
+      [disabled]="!isInputValid" (click)="createList()">Criar</button>
+  </div>
+
+</div>

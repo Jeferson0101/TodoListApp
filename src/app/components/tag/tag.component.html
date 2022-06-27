@@ -1,0 +1,9 @@
+<div class="tag" [ngClass]="{
+    'tag--high-priority': tagPriority === 'Alta',
+    'tag--middle-priority': tagPriority === 'Media',
+    'tag--low-priority': tagPriority === 'Baixa'
+}">
+    <span *ngIf="tagPriority === 'Alta'" class="tag__text">Alta</span>
+    <span *ngIf="tagPriority === 'Media'" class="tag__text">Média</span>
+    <span *ngIf="tagPriority === 'Baixa'" class="tag__text">Baixa</span>
+</div>

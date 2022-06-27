@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <span data-toggle="dropdown"
+        aria-expanded="false">
+        <span class="dropdown__icon">
+            <fa-icon [icon]="ellipsesIcon" size="xs"></fa-icon>
+        </span>
+    </span>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ng-content select="dropdown-action"></ng-content>
+    </div>
+</div>

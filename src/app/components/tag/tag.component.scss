@@ -1,0 +1,22 @@
+.tag {
+    width: 70px;
+    height: 18px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+
+    &--high-priority {
+        background-color: #dc3545;
+    }
+
+    &--middle-priority {
+        background-color: #fd7e14;
+
+    }
+
+    &--low-priority {
+        background-color: #0ae44b;
+    }
+}
